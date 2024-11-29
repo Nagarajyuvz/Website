@@ -1,0 +1,137 @@
+ /* General Styles */
+ body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://png.pngtree.com/background/20230618/original/pngtree-lakescape-landscape-nature-scenery-hd-picture-image_3712644.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Container */
+.form-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header */
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #007BFF;
+}
+
+.form-header p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+label span {
+  color: red;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button */
+.submit-btn {
+  width: 100%;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 12px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Success Message */
+.success-message {
+  margin-top: 15px;
+  font-size: 14px;
+  color: green;
+  text-align: center;
+}
+
+/* Layout for the form and details box */
+.form-layout {
+display: flex;
+gap: 20px;
+}
+
+form {
+flex: 1;
+}
+
+/* Container for details box */
+.details-box {
+background: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+max-width: 300px;
+position: fixed; /* Use fixed position */
+top: 50%;
+right: 10%;
+transform: translateY(-50%);
+box-sizing: border-box;
+display: none; /* Ensure it's hidden by default */
+z-index: 10; /* Ensure it appears on top */
+}
+
+
+.details-box h2 {
+font-size: 18px;
+color: #007BFF;
+margin-bottom: 15px;
+}
+
+.details-box p {
+margin: 5px 0;
+font-size: 14px;
+}

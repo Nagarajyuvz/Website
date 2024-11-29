@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fayn Global - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Carousel styles */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 400px; /* Adjust height as needed */
+    }
+    .carousel-images {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-images img {
+      width: 100%;
+      height: auto;
+    }
+    .control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Fayn Global Logo">
+      <span>Fayn Global</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Carousel Section -->
+  <div class="carousel">
+    <div class="carousel-images">
+      <img src="image1.jpeg" alt="Empowering Communities">
+      <img src="image2.jpeg" alt="Supporting Businesses">
+      <img src="image3.jpeg" alt="Innovative Directory Solutions">
+      <img src="image4.jpeg" alt="Empowering Communities">
+      <img src="image5.jpeg" alt="Supporting Businesses">
+      <img src="image6.jpeg" alt="Innovative Directory Solutions">
+    </div>
+    <button class="control prev">&larr;</button>
+    <button class="control next">&rarr;</button>
+  </div>
+
+  <!-- Home Page Content -->
+  <section class="content">
+    <h2>Welcome to Fayn Global</h2>
+    <p>The First Community-Based Directory Search Engine in India.</p>
+    <p>Empowering communities with resources to grow and thrive.</p>
+    <p>Connecting businesses to individuals for mutual growth.</p>
+    <p>Innovative solutions for bridging gaps in networking.</p>
+    <p>Join Fayn Global today and explore limitless opportunities.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Fayn Global. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const prevButton = document.querySelector('.prev');
+      const nextButton = document.querySelector('.next');
+      const carouselImages = document.querySelector('.carousel-images');
+      let currentIndex = 0;
+
+      const totalImages = carouselImages.children.length;
+
+      // Move to the previous image
+      function showPrevImage() {
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = totalImages - 1; // Loop to the last image
+        }
+        updateCarouselPosition();
+      }
+
+      // Move to the next image
+      function showNextImage() {
+        if (currentIndex < totalImages - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0; // Loop to the first image
+        }
+        updateCarouselPosition();
+      }
+
+      // Update the position of the carousel images
+      function updateCarouselPosition() {
+        const offset = -currentIndex * 100; // Move by 100% width per image
+        carouselImages.style.transform = `translateX(${offset}%)`;
+      }
+
+      // Event listeners for the carousel controls
+      prevButton.addEventListener('click', showPrevImage);
+      nextButton.addEventListener('click', showNextImage);
+    });
+  </script>
+</body>
+</html>
